@@ -7,12 +7,32 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+@Observable
+class IOS17Update {
+    var name: String = ""
+}
+
+struct ParentView: View {
+    
+    @State var obj17Update = IOS17Update()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ChildView(name: obj17Update)
+        Text(obj17Update.name)
+    }
+}
+
+struct ChildView: View {
+    
+    @Bindable var name: IOS17Update
+
+    var body: some View {
+        TextField("Enter your name", text: $name.name)
+        .textFieldStyle(.roundedBorder)
+        .padding(20)
     }
 }
 
 #Preview {
-    SwiftUIView()
+    ParentView()
 }

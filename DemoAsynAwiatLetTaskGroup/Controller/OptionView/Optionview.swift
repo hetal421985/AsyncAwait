@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct Optionview: View {
+    
+    /// Title
+    var shake: Shakes
+   
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack{
+            Text(shake.name)
+                .padding(20)
+                .foregroundStyle(.white)
+                .font(Font(UIFont.systemFont(ofSize: 18, weight: .semibold)))
+                .background(shake.selected ? Color("SelectedColor"): Color.clear,in: RoundedRectangle(cornerRadius: 10))
+            }
+     }
 }
 
 #Preview {
-    Optionview()
+    Optionview(shake: Shakes(id: 1, name: "Cocktail", selected: true))
 }

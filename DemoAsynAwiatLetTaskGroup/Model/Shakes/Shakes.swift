@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import Foundation
 
-struct Shakes: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    Shakes()
+struct Shakes {
+    /// ID
+    var id: Int
+    /// Name
+    var name: String
+    /// Selected
+    var selected: Bool
 }
